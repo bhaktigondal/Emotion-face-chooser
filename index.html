@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bulb & Emotion Face Toggler</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            text-align: center; /* Center aligning content */
+        }
+
+        #bulbImage {
+            width: 200px;
+            height: 200px;
+            height: auto;
+            object-fit: cover;
+        }
+
+        img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            margin: 20px auto; /* Centering the image */
+        }
+
+        button {
+            margin: 5px auto; /* Adding margin to the buttons */
+            background-color: black;
+            color: #fff;
+            font-size: 14px;
+            padding: 8px 12px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Bulb On/Off Toggler</h2>
+    <img id="bulbImage" src="/images/lightbulb.png" alt="Bulb Off">
+    <button onclick="toggleBulb()">Toggle Bulb</button>
+
+    <h2>Emotion Face Chooser</h2>
+    <button onclick="showEmotion('happy')">Happy</button>
+    <button onclick="showEmotion('sad')">Sad</button>
+    <button onclick="showEmotion('angry')">Angry</button>
+    <button onclick="showEmotion('surprised')">Surprised</button>
+    <button onclick="showEmotion('neutral')">Neutral</button>
+    <br>
+    <img id="emotionImage" src="/images/smile (1).png" alt="Emotion Face">
+
+    <script>
+        let bulbOn = false;
+        let bulbImage = document.getElementById('bulbImage');
+
+        function toggleBulb() {
+            bulbOn = !bulbOn;
+            if (bulbOn) {
+                bulbImage.src = '/images/lightbulb (1).png';
+            } else {
+                bulbImage.src = '/images/lightbulb (1).png';
+            }
+        }
+
+        let emotions = {
+            happy: '/images/smile.png',
+            sad: '/images/sad.png',
+            angry: '/images/angry.png',
+            surprised: '/images/happy.png',
+            neutral: '/images/confused.png'
+        };
+
+        function showEmotion(emotion) {
+            let emotionImage = document.getElementById('emotionImage');
+            emotionImage.src = emotions[emotion];
+        }
+    </script>
+
+</body>
+
+</html>
